@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto - Glow Room</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+
+<div class="social-sidebar">
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-tiktok"></i></a>
+  <a href="#"><i class="fab fa-youtube"></i></a>
+  <a href="#"><i class="fab fa-pinterest-p"></i></a>
+  <a href="#" style="writing-mode:vertical-lr;font-size:0.65rem;font-weight:800;letter-spacing:0.1em;padding:10px 8px;height:auto;width:36px;text-align:center;color:var(--hot-pink);background:white;border-left:3px solid var(--neon-pink);">SÍGUENOS</a>
+</div>
+
+<header class="header">
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo_glowroom.png" alt="Glow Room">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#facturacion">Facturación</a></li>
+      <li><a href="contacto.html">Contáctanos</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="#" id="searchBtn"><i class="fas fa-search"></i></a>
+      <a href="auth.html"><i class="fas fa-user"></i></a>
+      <a href="#"><i class="fas fa-heart"></i></a>
+      <a href="#" class="cart-icon cart-wrapper">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<nav class="mobile-nav">
+  <button class="mobile-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Inicio</a>
+  <a href="catalogo.html">Catálogo</a>
+  <a href="contacto.html">Contáctanos</a>
+  <a href="auth.html">Mi cuenta</a>
+</nav>
+
+<div class="page-hero" style="padding:32px 5% 24px;text-align:left">
+  <div class="breadcrumb" style="justify-content:flex-start">
+    <a href="index.html">Inicio</a>
+    <i class="fas fa-chevron-right" style="font-size:.7rem"></i>
+    <a href="catalogo.html">Catálogo</a>
+    <i class="fas fa-chevron-right" style="font-size:.7rem"></i>
+    <span id="productBreadcrumb">Producto</span>
+  </div>
+</div>
+
+<section class="product-detail-section">
+  <div class="product-detail-layout">
+
+
+    <div class="product-gallery">
+      <div class="main-image">
+        <img id="mainProductImg" src="" alt="Producto">
+      </div>
+      <div class="thumb-gallery" id="thumbGallery"></div>
+    </div>
+
+        <div class="product-info">
+      <div class="product-category-tag" id="productCategory" style="font-size:.85rem;margin-bottom:4px"></div>
+      <h1 id="productName"></h1>
+      <div class="product-meta">
+        <div class="rating">
+          <span id="productRating"></span>
+          <span id="productReviews"></span>
+        </div>
+        <span class="availability-badge"><i class="fas fa-circle"></i> Disponible</span>
+      </div>
+      <div class="detail-price" id="productPrice"></div>
+
+      <p class="product-desc" id="productDesc"></p>
+
+      <div class="product-specs">
+        <dl>
+          <dt>Marca</dt><dd id="productBrand"></dd>
+          <dt>Colección</dt><dd id="productCollection"></dd>
+          <dt>Dimensiones</dt><dd id="productDimensions"></dd>
+          <dt>Material</dt><dd id="productMaterials"></dd>
+        </dl>
+      </div>
+
+      <div class="quantity-selector">
+        <label>Cantidad:</label>
+        <div class="qty-control">
+          <button class="qty-btn" id="qtyMinus">−</button>
+          <input type="number" class="qty-input" id="qtyInput" value="1" min="1">
+          <button class="qty-btn" id="qtyPlus">+</button>
+        </div>
+      </div>
+
+      <div class="detail-actions">
+        <button class="btn-primary" id="addToCartBtn">
+          <i class="fas fa-shopping-bag"></i> Añadir al carrito
+        </button>
+        <button class="btn-outline" id="wishlistDetailBtn" title="Guardar en lista de deseos">
+          <i class="far fa-heart"></i>
+        </button>
+        <button class="btn-outline" onclick="shareProduct()" title="Compartir">
+          <i class="fas fa-share-alt"></i>
+        </button>
+      </div>
+
+  
+      <div>
+        <div class="accordion-item">
+          <button class="accordion-header open" data-target="acc1">
+            Detalles del producto <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content open" id="acc1">
+            <p id="productDesc2"></p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="acc2">
+            Política de devolución <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content" id="acc2">
+            <p>Aceptamos devoluciones hasta 30 días después de recibir tu pedido. El producto debe estar en condiciones originales, sin uso y en su empaque original. Contáctanos a <strong>atencion-glowroom@integradora.com</strong> para iniciar el proceso. Una vez verificado, el reembolso se procesa en 3-5 días hábiles.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header" data-target="acc3">
+            Envío <i class="fas fa-chevron-down"></i>
+          </button>
+          <div class="accordion-content" id="acc3">
+            <p>📦 <strong>Envío estándar:</strong> 3-7 días hábiles — $99 MXN (GRATIS en compras +$999 MXN)<br>
+            🚀 <strong>Envío express:</strong> 1-2 días hábiles — $249 MXN<br>
+            🌍 Enviamos a toda la República Mexicana. Se genera número de rastreo al confirmar el pedido.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <div style="max-width:1200px;margin:0 auto">
+    <div class="section-title">
+      <span class="label">Opiniones</span>
+      <h2>Reseñas de <span>clientes</span></h2>
+    </div>
+
+
+    <div style="display:flex;align-items:center;gap:40px;max-width:600px;margin:0 auto 40px;background:white;padding:28px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.06)">
+      <div style="text-align:center">
+        <div style="font-size:3.5rem;font-weight:900;color:var(--hot-pink)">4.7</div>
+        <div style="color:#FFB800;font-size:1.2rem">★★★★★</div>
+        <div style="font-size:.8rem;color:var(--text-light);font-weight:600">Basado en 2,391 reseñas</div>
+      </div>
+      <div style="flex:1">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+          <span style="font-size:.8rem;font-weight:700;min-width:10px">5</span>
+          <div style="flex:1;height:8px;background:var(--rosa-pastel);border-radius:4px;overflow:hidden"><div style="height:100%;width:72%;background:linear-gradient(90deg,var(--hot-pink),var(--pink-mid));border-radius:4px"></div></div>
+          <span style="font-size:.75rem;color:var(--text-light);min-width:32px">72%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+          <span style="font-size:.8rem;font-weight:700;min-width:10px">4</span>
+          <div style="flex:1;height:8px;background:var(--rosa-pastel);border-radius:4px;overflow:hidden"><div style="height:100%;width:18%;background:linear-gradient(90deg,var(--hot-pink),var(--pink-mid));border-radius:4px"></div></div>
+          <span style="font-size:.75rem;color:var(--text-light);min-width:32px">18%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+          <span style="font-size:.8rem;font-weight:700;min-width:10px">3</span>
+          <div style="flex:1;height:8px;background:var(--rosa-pastel);border-radius:4px;overflow:hidden"><div style="height:100%;width:6%;background:linear-gradient(90deg,var(--hot-pink),var(--pink-mid));border-radius:4px"></div></div>
+          <span style="font-size:.75rem;color:var(--text-light);min-width:32px">6%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+          <span style="font-size:.8rem;font-weight:700;min-width:10px">2</span>
+          <div style="flex:1;height:8px;background:var(--rosa-pastel);border-radius:4px;overflow:hidden"><div style="height:100%;width:2%;background:linear-gradient(90deg,var(--hot-pink),var(--pink-mid));border-radius:4px"></div></div>
+          <span style="font-size:.75rem;color:var(--text-light);min-width:32px">2%</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="font-size:.8rem;font-weight:700;min-width:10px">1</span>
+          <div style="flex:1;height:8px;background:var(--rosa-pastel);border-radius:4px;overflow:hidden"><div style="height:100%;width:2%;background:linear-gradient(90deg,var(--hot-pink),var(--pink-mid));border-radius:4px"></div></div>
+          <span style="font-size:.75rem;color:var(--text-light);min-width:32px">2%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar">L</div>
+          <div class="reviewer-info">
+            <h5>Lucía M.</h5>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">¡Increíble producto! La calidad es exactamente como se describe y llegó muy bien empacado. Los colores son hermosos y definitivamente lo recomendaría a todas mis amigas. ¡Volveré a comprar sin duda!</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:linear-gradient(135deg,var(--lila-suave),var(--neon-pink))">E</div>
+          <div class="reviewer-info">
+            <h5>Emily R.</h5>
+            <div class="stars">★★★★☆</div>
+          </div>
+        </div>
+        <p class="review-text">Muy buen producto, llegó rápido y bien empacado. La calidad es bastante buena para el precio. Solo le doy 4 estrellas porque el color es ligeramente diferente al de las fotos, pero sigue siendo muy bonito.</p>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:linear-gradient(135deg,var(--neon-pink),var(--rosa-pastel))">M</div>
+          <div class="reviewer-info">
+            <h5>Mía T.</h5>
+            <div class="stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review-text">¡Lo mejor que he comprado este mes! Exactamente como en las fotos, envío súper rápido y el empaque es adorable. Ya lo recomendé a mis amigos. Glow Room siempre cumple con mis expectativas.</p>
+      </div>
+    </div>
+
+   
+    <div style="max-width:600px;margin:40px auto 0;background:white;border-radius:16px;padding:32px;box-shadow:0 4px 20px rgba(0,0,0,.06)">
+      <h3 style="font-size:1.2rem;font-weight:900;margin-bottom:20px">Comparte tu opinión</h3>
+      <form onsubmit="submitReview(event)">
+        <div style="margin-bottom:16px">
+          <label style="font-size:.85rem;font-weight:700;display:block;margin-bottom:6px">Tu calificación</label>
+          <div style="display:flex;gap:8px;font-size:1.5rem;cursor:pointer" id="starRating">
+            <span onclick="setRating(1)" style="color:#ddd">★</span>
+            <span onclick="setRating(2)" style="color:#ddd">★</span>
+            <span onclick="setRating(3)" style="color:#ddd">★</span>
+            <span onclick="setRating(4)" style="color:#ddd">★</span>
+            <span onclick="setRating(5)" style="color:#ddd">★</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-group label" style="font-size:.85rem;font-weight:700">Tu nombre</label>
+          <input type="text" class="form-control" placeholder="Nombre" required style="margin-top:6px">
+        </div>
+        <div class="form-group">
+          <label style="font-size:.85rem;font-weight:700;display:block;margin-bottom:6px">Tu reseña</label>
+          <textarea class="form-control textarea-control" placeholder="Escribe tu experiencia con este producto..." required style="min-height:100px;resize:vertical"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Enviar reseña</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="products-section" style="padding:60px 5%">
+  <div class="section-title">
+    <span class="label">Te puede interesar</span>
+    <h2>Productos <span>Relacionados</span></h2>
+  </div>
+  <div class="products-grid" id="relatedProducts" style="max-width:1200px;margin:0 auto"></div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo_glowroom.png" alt="Glow Room" class="logo">
+      <div class="contact-info">
+        <div>Contáctanos: <a href="tel:+525556784869">+52 55 5678 4869</a></div>
+        <div>Sugerencias: <a href="mailto:atencion-glowroom@integradora.com">atencion-glowroom@integradora.com</a></div>
+      </div>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Compañía</h5>
+      <ul><li><a href="#">Nosotros</a></li><li><a href="#">Afiliados</a></li><li><a href="contacto.html">Contáctanos</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Comprar</h5>
+      <ul><li><a href="catalogo.html">Catálogo</a></li><li><a href="catalogo.html">Accesorios</a></li><li><a href="catalogo.html">Decoración</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Ayuda</h5>
+      <ul><li><a href="#">Servicio al cliente</a></li><li><a href="auth.html">Mi cuenta</a></li><li><a href="#">Facturación</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h5>Suscríbete</h5>
+      <form class="newsletter-form" onsubmit="event.preventDefault();this.innerHTML='<p style=color:var(--neon-pink);font-weight:700;padding:12px 0>✓ ¡Gracias!</p>'">
+        <input type="email" placeholder="Correo electrónico" required>
+        <button type="submit">Unirse</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>Copyright © 2025 Glow Room. Todos los derechos reservados.</span></div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-bag" style="color:var(--hot-pink);margin-right:8px"></i> Carrito</h3>
+    <button class="cart-close" id="cartCloseBtn"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total:</span><span class="total-price" id="cartTotal">$0.00 MXN</span></div>
+    <button class="btn-primary btn-full" id="checkoutBtn"><i class="fas fa-lock"></i> Proceder al pago</button>
+  </div>
+</aside>
+
+<div class="toast" id="toast">
+  <div class="toast-icon"><i class="fas fa-check"></i></div>
+  <div class="toast-text"><h5>Título</h5><p>Mensaje</p></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+let currentRating = 0;
+
+function setRating(n) {
+  currentRating = n;
+  document.querySelectorAll('#starRating span').forEach((s, i) => {
+    s.style.color = i < n ? '#FFB800' : '#ddd';
+  });
+}
+
+function submitReview(e) {
+  e.preventDefault();
+  if (!currentRating) { showToast('Error', 'Por favor selecciona una calificación'); return; }
+  showToast('¡Gracias!', 'Tu reseña fue enviada correctamente');
+  e.target.reset();
+  setRating(0);
+}
+
+function shareProduct() {
+  if (navigator.share) {
+    navigator.share({ title: document.title, url: window.location.href });
+  } else {
+    navigator.clipboard?.writeText(window.location.href);
+    showToast('Enlace copiado', 'El enlace del producto fue copiado');
+  }
+}
+
+
+window.addEventListener('load', () => {
+  const desc2 = document.getElementById('productDesc2');
+  if (desc2) {
+    setTimeout(() => {
+      const desc = document.getElementById('productDesc');
+      if (desc) desc2.textContent = desc.textContent;
+    }, 100);
+  }
+});
+</script>
+</body>
+</html>

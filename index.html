@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glow Room - LA INTEGRADORA</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+
+<div class="social-sidebar">
+  <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+  <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+  <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+  <a href="#" class="siguenos-label" aria-label="Síguenos" style="writing-mode:vertical-lr;font-size:0.65rem;font-weight:800;letter-spacing:0.1em;padding:10px 8px;height:auto;width:36px;text-align:center;color:var(--hot-pink);background:white;border-left:3px solid var(--neon-pink);">SÍGUENOS</a>
+</div>
+
+<header class="header">
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo_glowroom.png" alt="Glow Room">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Inicio</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#facturacion">Facturación</a></li>
+      <li><a href="contacto.html">Contáctanos</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="#" id="searchBtn" aria-label="Buscar"><i class="fas fa-search"></i></a>
+      <a href="auth.html" aria-label="Mi cuenta"><i class="fas fa-user"></i></a>
+      <a href="#" aria-label="Lista de deseos"><i class="fas fa-heart"></i></a>
+      <a href="#" class="cart-icon cart-wrapper" aria-label="Carrito">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<nav class="mobile-nav">
+  <button class="mobile-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Inicio</a>
+  <a href="catalogo.html">Catálogo</a>
+  <a href="contacto.html">Contáctanos</a>
+  <a href="auth.html">Mi cuenta</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-slides">
+    <div class="hero-slide" style="background-image: url('images/Banner-principal.gif')">
+      <div class="hero-content">
+        <span class="tag">✨ Nuevos</span>
+        <h1>Desata tu estilo con nuestra nueva colección</h1>
+        <p>Decoración, accesorios y regalos diseñados para brillar.</p>
+        <div class="hero-buttons">
+          <a href="catalogo.html" class="btn-primary"><i class="fas fa-sparkles"></i> Descubre más</a>
+          <a href="catalogo.html" class="btn-white">Ver catálogo</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('images/seccion-fiestas.jpeg')">
+      <div class="hero-content">
+        <span class="tag">🎉 Fiestas Temáticas</span>
+        <h1>Todo para tu fiesta perfecta</h1>
+        <p>Decoraciones, globos y todo lo que necesitas para celebrar.</p>
+        <div class="hero-buttons">
+          <a href="catalogo.html" class="btn-primary"><i class="fas fa-gift"></i> Comprar ahora</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" style="background-image: url('images/seccion-regalos.webP')">
+      <div class="hero-content">
+        <span class="tag">🎁 Regalos Premium</span>
+        <h1>Sorprende a alguien especial</h1>
+        <p>Los mejores regalos envueltos con todo el amor de Glow Room.</p>
+        <div class="hero-buttons">
+          <a href="catalogo.html" class="btn-primary"><i class="fas fa-heart"></i> Ver regalos</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-dots">
+    <span class="hero-dot active"></span>
+    <span class="hero-dot"></span>
+    <span class="hero-dot"></span>
+  </div>
+  <div class="hero-arrows">
+    <button class="hero-arrow hero-prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="hero-arrow hero-next"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</section>
+
+<section class="categories-section">
+  <div class="section-title">
+    <span class="label">Explora</span>
+    <h2>Nuestras <span>Categorías</span></h2>
+  </div>
+  <div class="categories-grid" style="max-width:1200px;margin:0 auto">
+    <div class="category-card large">
+      <img src="images/seccion-decoracion.jpeg" alt="Decoración">
+      <div class="category-overlay">
+        <h3>Decoración</h3>
+        <a href="catalogo.html?cat=Decoración" class="shop-link">Comprar <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="category-card small">
+      <img src="images/seccion accesorios.jpg" alt="Accesorios">
+      <div class="category-overlay">
+        <h3>Accesorios</h3>
+        <a href="catalogo.html?cat=Accesorios" class="shop-link">Comprar <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="category-card small">
+      <img src="images/seccion-regalos.webP" alt="Regalos">
+      <div class="category-overlay">
+        <h3>Regalos</h3>
+        <a href="catalogo.html?cat=Regalos" class="shop-link">Comprar <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+
+
+  <div style="display:flex;gap:16px;max-width:1200px;margin:20px auto 0;flex-wrap:wrap">
+    <a href="catalogo.html" style="flex:1;min-width:200px;background:var(--lila-suave);border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-weight:800;color:var(--dark);transition:all 0.3s;text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'">
+      <span>Tarjetas de regalo<br><small style="font-weight:600;color:var(--text-mid)">Un obsequio fácil de usar</small></span>
+      <i class="fas fa-gift" style="font-size:1.8rem;color:var(--hot-pink)"></i>
+    </a>
+    <a href="catalogo.html" style="flex:1;min-width:200px;background:var(--rosa-pastel);border-radius:12px;padding:20px 24px;display:flex;align-items:center;justify-content:space-between;font-weight:800;color:var(--dark);transition:all 0.3s;text-decoration:none;" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform='none'">
+      <span>Colección Fiestas<br><small style="font-weight:600;color:var(--text-mid)">Celebra con estilo</small></span>
+      <i class="fas fa-party-horn" style="font-size:1.8rem;color:var(--hot-pink)"></i>
+    </a>
+  </div>
+</section>
+
+<section class="products-section">
+  <div class="section-title">
+    <span class="label">Lo más popular</span>
+    <h2>Productos en <span>Tendencia</span></h2>
+  </div>
+  <div class="products-tabs">
+    <button class="products-tab active" data-category="Todo">Todo</button>
+    <button class="products-tab" data-category="Decoración">Decoración</button>
+    <button class="products-tab" data-category="Accesorios">Accesorios</button>
+    <button class="products-tab" data-category="Regalos">Regalos</button>
+  </div>
+  <div class="products-grid" id="featuredProducts"></div>
+  <div style="text-align:center">
+    <a href="catalogo.html" class="btn-outline">Descubre más <i class="fas fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<section class="promo-section">
+  <div class="promo-card" style="background-image:url('images/seccion-fiestas.jpeg')">
+    <div class="promo-content">
+      <div class="sub-label">Fiestas Temáticas</div>
+      <h2>TODO PARA TU FIESTA</h2>
+      <a href="catalogo.html" class="btn-white">COMPRAR</a>
+    </div>
+  </div>
+  <div class="promo-card reverse" style="background-image:url('images/seccion-coleccion.webP');margin-top:24px">
+    <div class="promo-content">
+      <div class="sub-label" style="justify-content:flex-end">Ofertas Diarias</div>
+      <h2>COLECCIÓN<br>STARLET GLOW</h2>
+      <a href="catalogo.html" class="btn-white">COMPRAR</a>
+    </div>
+  </div>
+</section>
+
+<section class="features-bar">
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fas fa-truck"></i></div>
+      <h4>Entregas rápidas y gratuitas</h4>
+      <p>Entregas gratuitas en compras mayores a $999 MXN</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fas fa-headset"></i></div>
+      <h4>Soporte al cliente 24/7</h4>
+      <p>¿Necesitas ayuda? Nuestro equipo está para ti</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+      <h4>Compras garantizadas</h4>
+      <p>Tu dinero y datos 100% protegidos</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon"><i class="fas fa-undo-alt"></i></div>
+      <h4>Devoluciones</h4>
+      <p>Garantía Glow Room. Si no estás feliz, te devolvemos tu dinero</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo_glowroom.png" alt="Glow Room" class="logo">
+      <div class="contact-info">
+        <div>Contáctanos:</div>
+        <div><a href="tel:+525556784869">+52 33 3333 3333</a></div>
+        <div>Comentarios y sugerencias:</div>
+        <div><a href="mailto:atencion-glowroom@integradora.com">atencion-glowroom@integradora.com</a></div>
+      </div>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Compañía</h5>
+      <ul>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Oferta laboral</a></li>
+        <li><a href="#">Afiliados</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Comprar</h5>
+      <ul>
+        <li><a href="catalogo.html">Lo nuevo</a></li>
+        <li><a href="catalogo.html">Accesorios</a></li>
+        <li><a href="catalogo.html">Decoración</a></li>
+        <li><a href="catalogo.html">Regalos</a></li>
+        <li><a href="#">Reseñas</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Ayuda</h5>
+      <ul>
+        <li><a href="#">Servicio al cliente</a></li>
+        <li><a href="auth.html">Mi cuenta</a></li>
+        <li><a href="#">Facturación</a></li>
+        <li><a href="#">Políticas de privacidad</a></li>
+        <li><a href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Suscríbete</h5>
+      <p style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:12px;line-height:1.6">Acceso exclusivo a ofertas y noticias.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault();this.innerHTML='<p style=color:var(--neon-pink);font-weight:700;padding:12px 0>✓ ¡Gracias por suscribirte!</p>'">
+        <input type="email" placeholder="Correo electrónico" required>
+        <button type="submit">Unirse</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Copyright © 2025 Glow Room. Todos los derechos reservados.</span>
+    <span>Hecho con <i class="fas fa-heart" style="color:var(--neon-pink)"></i> para ti</span>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-bag" style="color:var(--hot-pink);margin-right:8px"></i> Carrito de compras</h3>
+    <button class="cart-close" id="cartCloseBtn"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span class="total-price" id="cartTotal">$0.00 MXN</span>
+    </div>
+    <button class="btn-primary btn-full" id="checkoutBtn">
+      <i class="fas fa-lock"></i> Proceder al pago
+    </button>
+    <a href="catalogo.html" class="btn-outline btn-full" style="margin-top:10px;text-align:center;justify-content:center">
+      Seguir comprando
+    </a>
+  </div>
+</aside>
+
+<div class="toast" id="toast">
+  <div class="toast-icon"><i class="fas fa-check"></i></div>
+  <div class="toast-text">
+    <h5>Título</h5>
+    <p>Mensaje</p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

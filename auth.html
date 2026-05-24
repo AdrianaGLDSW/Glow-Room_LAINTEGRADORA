@@ -1,0 +1,277 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar Sesión / Registrarse - Glow Room</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo_glowroom.png" alt="Glow Room">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalogo.html">Catálogo</a></li>
+      <li><a href="contacto.html">Contáctanos</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="#" class="cart-icon cart-wrapper">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<nav class="mobile-nav">
+  <button class="mobile-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Inicio</a>
+  <a href="catalogo.html">Catálogo</a>
+  <a href="contacto.html">Contáctanos</a>
+</nav>
+
+<div class="auth-page">
+  <div class="auth-card">
+
+        <div class="auth-logo">
+      <img src="images/logo_glowroom.png" alt="Glow Room">
+      <p style="font-size:.85rem;color:var(--text-mid);font-weight:600">Tu destino de decoración y regalos</p>
+    </div>
+
+        <div class="auth-tabs">
+      <button class="auth-tab active" data-panel="loginPanel">Iniciar sesión</button>
+      <button class="auth-tab" data-panel="registerPanel">Registrarse</button>
+    </div>
+
+        <div class="auth-form-panel active" id="loginPanel">
+      <p style="font-size:.85rem;color:var(--text-mid);font-weight:600;margin-bottom:20px;text-align:center">
+        ¿No tienes cuenta? <a href="#" onclick="document.querySelector('[data-panel=registerPanel]').click()" style="color:var(--hot-pink);font-weight:800">Regístrate aquí</a>
+      </p>
+
+      <div id="loginError" style="display:none;background:#fff0f0;border:1px solid #ffb3b3;color:#c0392b;padding:12px 16px;border-radius:10px;font-size:.85rem;font-weight:600;margin-bottom:16px"></div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="loginEmail">Correo electrónico</label>
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <input type="email" class="form-control" id="loginEmail" placeholder="tucorreo@ejemplo.com" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="loginPass">Contraseña</label>
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" class="form-control" id="loginPass" placeholder="Tu contraseña" autocomplete="current-password">
+            <button type="button" class="toggle-password"><i class="far fa-eye"></i></button>
+          </div>
+        </div>
+
+        <div class="form-extras">
+          <label class="remember-me">
+            <input type="checkbox"> Recuérdame
+          </label>
+          <a href="#" class="forgot-link" id="forgotLink">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full">
+          <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+        </button>
+      </form>
+
+      <div class="divider">o continúa con</div>
+
+      <button class="btn-google">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        Iniciar sesión con Google
+      </button>
+
+      <div class="divider"></div>
+      <div style="background:var(--rosa-pastel);border-radius:10px;padding:12px 16px;text-align:center">
+        <p style="font-size:.8rem;color:var(--text-mid);font-weight:600">Verificación de seguridad</p>
+        <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:8px;background:white;border:1px solid #ddd;border-radius:8px;padding:10px">
+          <input type="checkbox" style="width:18px;height:18px;accent-color:var(--hot-pink)">
+          <span style="font-size:.85rem;color:var(--dark);font-weight:600">No soy un robot</span>
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23f0f0f0'/%3E%3Ctext x='32' y='40' text-anchor='middle' font-size='28'%3E🛡️%3C/text%3E%3C/svg%3E" alt="reCAPTCHA" style="width:40px;height:40px">
+        </div>
+        <p style="font-size:.7rem;color:var(--text-light);margin-top:4px">reCAPTCHA - Privacy - Terms</p>
+      </div>
+
+      <p style="font-size:.75rem;color:var(--text-light);text-align:center;margin-top:12px">
+        ¿Olvidaste tu contraseña? <a href="#" id="forgotLink2" style="color:var(--hot-pink);font-weight:700">Recupérala aquí</a>
+      </p>
+    </div>
+
+        <div class="auth-form-panel" id="registerPanel">
+      <p style="font-size:.85rem;color:var(--text-mid);font-weight:600;text-align:center;margin-bottom:20px">
+        ¡Únete a Glow Room y empieza a brillar ✨
+      </p>
+
+      <div id="registerError" style="display:none;background:#fff0f0;border:1px solid #ffb3b3;color:#c0392b;padding:12px 16px;border-radius:10px;font-size:.85rem;font-weight:600;margin-bottom:16px"></div>
+
+      <form id="registerForm">
+        <div class="form-group">
+          <label for="regName">Nombre completo</label>
+          <div class="input-icon">
+            <i class="fas fa-user"></i>
+            <input type="text" class="form-control" id="regName" placeholder="Escribe tu nombre" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regBirth">Fecha de nacimiento</label>
+          <div class="input-icon">
+            <i class="fas fa-calendar"></i>
+            <input type="date" class="form-control" id="regBirth" placeholder="Ejemplo: 12 May 2001" style="padding-left:40px">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regEmail">Correo electrónico</label>
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <input type="email" class="form-control" id="regEmail" placeholder="mail@example.com" required autocomplete="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regPass">Contraseña</label>
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" class="form-control" id="regPass" placeholder="Mínimo 8 caracteres" required autocomplete="new-password">
+            <button type="button" class="toggle-password"><i class="far fa-eye"></i></button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="regConfirm">Confirma tu contraseña</label>
+          <div class="input-icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" class="form-control" id="regConfirm" placeholder="Repite tu contraseña" required autocomplete="new-password">
+            <button type="button" class="toggle-password"><i class="far fa-eye"></i></button>
+          </div>
+        </div>
+
+        <button type="button" class="btn-google" style="margin-bottom:16px">
+          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Registrarse con Google
+        </button>
+
+        <div class="form-check">
+          <input type="checkbox" id="terminos" required>
+          <label for="terminos">Acepta nuestros <a href="#">Términos de servicio.</a></label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" id="privacidad" required>
+          <label for="privacidad">Acepta nuestra <a href="#">Política de privacidad.</a></label>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full" style="margin-top:16px">
+          <i class="fas fa-user-plus"></i> Registrarse
+        </button>
+      </form>
+
+      <p class="auth-switch">¿Ya tienes cuenta? <a href="#" onclick="document.querySelector('[data-panel=loginPanel]').click()">Iniciar sesión</a></p>
+    </div>
+
+        <div id="forgotPanel" style="display:none">
+      <div style="text-align:center;margin-bottom:24px">
+        <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--rosa-pastel),var(--lila-suave));display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.4rem;color:var(--hot-pink)">
+          <i class="fas fa-key"></i>
+        </div>
+        <h3 style="font-size:1.3rem;font-weight:900;margin-bottom:8px">¿Olvidaste tu contraseña?</h3>
+        <p style="font-size:.88rem;color:var(--text-mid);line-height:1.6">Ingresa tu correo electrónico y te enviaremos instrucciones para restablecer tu contraseña.</p>
+      </div>
+
+      <form id="forgotForm">
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <div class="input-icon">
+            <i class="fas fa-envelope"></i>
+            <input type="email" class="form-control" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-primary btn-full">
+          <i class="fas fa-paper-plane"></i> Enviar instrucciones
+        </button>
+      </form>
+
+      <div id="forgotSuccess" style="display:none;text-align:center;padding:24px 0">
+        <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#27ae60,#2ecc71);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:1.8rem;color:white">
+          <i class="fas fa-check"></i>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:900;margin-bottom:8px">¡Correo enviado!</h4>
+        <p style="font-size:.88rem;color:var(--text-mid);line-height:1.6">Hemos enviado las instrucciones para restablecer tu contraseña. Revisa tu bandeja de entrada.</p>
+        <button onclick="backToLogin()" class="btn-primary" style="margin-top:20px">
+          <i class="fas fa-arrow-left"></i> Volver al inicio de sesión
+        </button>
+      </div>
+
+      <div style="text-align:center;margin-top:16px">
+        <a href="#" id="backToLogin" onclick="backToLogin()" style="font-size:.85rem;font-weight:700;color:var(--hot-pink)">
+          <i class="fas fa-arrow-left"></i> Volver al inicio de sesión
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="toast" id="toast">
+  <div class="toast-icon"><i class="fas fa-check"></i></div>
+  <div class="toast-text"><h5>Título</h5><p>Mensaje</p></div>
+</div>
+
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-bag" style="color:var(--hot-pink);margin-right:8px"></i> Carrito</h3>
+    <button class="cart-close" id="cartCloseBtn"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Total:</span><span class="total-price" id="cartTotal">$0.00 MXN</span></div>
+    <button class="btn-primary btn-full" id="checkoutBtn"><i class="fas fa-lock"></i> Proceder al pago</button>
+  </div>
+</aside>
+
+<script src="script.js"></script>
+<script>
+function backToLogin() {
+  document.getElementById('forgotPanel').style.display = 'none';
+  document.getElementById('forgotSuccess').style.display = 'none';
+  document.getElementById('forgotForm').style.display = '';
+  document.getElementById('loginPanel').classList.add('active');
+  document.querySelector('[data-panel="loginPanel"]').classList.add('active');
+}
+
+document.getElementById('forgotLink')?.addEventListener('click', e => {
+  e.preventDefault();
+  document.getElementById('loginPanel').classList.remove('active');
+  document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('forgotPanel').style.display = 'block';
+});
+
+document.getElementById('forgotLink2')?.addEventListener('click', e => {
+  e.preventDefault();
+  document.getElementById('loginPanel').classList.remove('active');
+  document.querySelectorAll('.auth-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('forgotPanel').style.display = 'block';
+});
+
+document.getElementById('forgotForm')?.addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('forgotForm').style.display = 'none';
+  document.getElementById('forgotSuccess').style.display = 'block';
+});
+</script>
+</body>
+</html>

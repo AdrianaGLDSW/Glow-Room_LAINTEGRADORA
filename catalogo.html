@@ -1,0 +1,284 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo - Glow Room</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+
+<div class="social-sidebar">
+  <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <a href="#"><i class="fab fa-instagram"></i></a>
+  <a href="#"><i class="fab fa-tiktok"></i></a>
+  <a href="#"><i class="fab fa-youtube"></i></a>
+  <a href="#"><i class="fab fa-pinterest-p"></i></a>
+  <a href="#" style="writing-mode:vertical-lr;font-size:0.65rem;font-weight:800;letter-spacing:0.1em;padding:10px 8px;height:auto;width:36px;text-align:center;color:var(--hot-pink);background:white;border-left:3px solid var(--neon-pink);">SÍGUENOS</a>
+</div>
+
+<header class="header">
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo_glowroom.png" alt="Glow Room">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="catalogo.html" class="active">Catálogo</a></li>
+      <li><a href="index.html#blog">Blog</a></li>
+      <li><a href="index.html#facturacion">Facturación</a></li>
+      <li><a href="contacto.html">Contáctanos</a></li>
+    </ul>
+    <div class="nav-icons">
+      <a href="#" id="searchBtn"><i class="fas fa-search"></i></a>
+      <a href="auth.html"><i class="fas fa-user"></i></a>
+      <a href="#"><i class="fas fa-heart"></i></a>
+      <a href="#" class="cart-icon cart-wrapper">
+        <i class="fas fa-shopping-bag"></i>
+        <span class="cart-count">0</span>
+      </a>
+      <button class="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<nav class="mobile-nav">
+  <button class="mobile-close"><i class="fas fa-times"></i></button>
+  <a href="index.html">Inicio</a>
+  <a href="catalogo.html">Catálogo</a>
+  <a href="contacto.html">Contáctanos</a>
+  <a href="auth.html">Mi cuenta</a>
+</nav>
+
+<div class="page-hero">
+  <h1>Productos en <span>Tendencia</span></h1>
+  <p>Descubre nuestra colección completa de decoración y regalos</p>
+  <div class="breadcrumb">
+    <a href="index.html">Inicio</a>
+    <i class="fas fa-chevron-right" style="font-size:0.7rem"></i>
+    <span>Catálogo</span>
+  </div>
+</div>
+
+<section class="catalog-section">
+  <div class="catalog-layout">
+
+        <aside class="filters-sidebar">
+      <div class="filter-card">
+        <h4>Categorías</h4>
+        <div class="filter-option">
+          <input type="checkbox" class="filter-category" id="cat-dec" value="Decoración">
+          <label for="cat-dec">Decoración</label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" class="filter-category" id="cat-acc" value="Accesorios">
+          <label for="cat-acc">Accesorios</label>
+        </div>
+        <div class="filter-option">
+          <input type="checkbox" class="filter-category" id="cat-reg" value="Regalos">
+          <label for="cat-reg">Regalos</label>
+        </div>
+      </div>
+
+      <div class="filter-card">
+        <h4>Precio</h4>
+        <div class="price-range">
+          <input type="number" placeholder="Mín" min="0" id="priceMin">
+          <input type="number" placeholder="Máx" min="0" id="priceMax">
+        </div>
+        <button class="btn-primary" style="width:100%;margin-top:12px;justify-content:center" onclick="applyPriceFilter()">
+          Aplicar
+        </button>
+      </div>
+
+      <div class="filter-card">
+        <h4>Calificación</h4>
+        <div class="filter-option">
+          <input type="radio" name="rating" id="r5" value="5">
+          <label for="r5">★★★★★ (5 estrellas)</label>
+        </div>
+        <div class="filter-option">
+          <input type="radio" name="rating" id="r4" value="4">
+          <label for="r4">★★★★ y más</label>
+        </div>
+        <div class="filter-option">
+          <input type="radio" name="rating" id="r3" value="3">
+          <label for="r3">★★★ y más</label>
+        </div>
+      </div>
+
+      <button class="btn-outline" style="width:100%;justify-content:center" onclick="clearFilters()">
+        <i class="fas fa-times"></i> Limpiar filtros
+      </button>
+    </aside>
+
+        <main class="catalog-main">
+      <div class="catalog-toolbar">
+        <span class="results-count" id="resultsCount">Cargando productos...</span>
+        <select class="sort-select" id="sortSelect">
+          <option value="default">Ordenar por: Destacados</option>
+          <option value="price-asc">Precio: Menor a Mayor</option>
+          <option value="price-desc">Precio: Mayor a Menor</option>
+          <option value="rating">Mejor Calificados</option>
+          <option value="popular">Más Populares</option>
+        </select>
+      </div>
+      <div class="catalog-grid" id="catalogGrid"></div>
+      <div class="pagination">
+        <button class="page-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">4</button>
+        <button class="page-btn">5</button>
+        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </main>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo_glowroom.png" alt="Glow Room" class="logo">
+      <div class="contact-info">
+        <div>Contáctanos: <a href="tel:+525556784869">+52 33 3333 3333</a></div>
+        <div>Sugerencias: <a href="mailto:atencion-glowroom@integradora.com">atencion-glowroom@integradora.com</a></div>
+      </div>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Compañía</h5>
+      <ul>
+        <li><a href="#">Nosotros</a></li>
+        <li><a href="#">Oferta laboral</a></li>
+        <li><a href="#">Afiliados</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Comprar</h5>
+      <ul>
+        <li><a href="catalogo.html">Lo nuevo</a></li>
+        <li><a href="catalogo.html">Accesorios</a></li>
+        <li><a href="catalogo.html">Decoración</a></li>
+        <li><a href="catalogo.html">Regalos</a></li>
+        <li><a href="#">Reseñas</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Ayuda</h5>
+      <ul>
+        <li><a href="#">Servicio al cliente</a></li>
+        <li><a href="auth.html">Mi cuenta</a></li>
+        <li><a href="#">Facturación</a></li>
+        <li><a href="#">Políticas de privacidad</a></li>
+        <li><a href="contacto.html">Contáctanos</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Suscríbete</h5>
+      <p style="font-size:.85rem;color:rgba(255,255,255,.6);margin-bottom:12px">Acceso exclusivo a ofertas y noticias.</p>
+      <form class="newsletter-form" onsubmit="event.preventDefault();this.innerHTML='<p style=color:var(--neon-pink);font-weight:700;padding:12px 0>✓ ¡Gracias!</p>'">
+        <input type="email" placeholder="Correo electrónico" required>
+        <button type="submit">Unirse</button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>Copyright © 2025 Glow Room. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-bag" style="color:var(--hot-pink);margin-right:8px"></i> Carrito</h3>
+    <button class="cart-close" id="cartCloseBtn"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span class="total-price" id="cartTotal">$0.00 MXN</span>
+    </div>
+    <button class="btn-primary btn-full" id="checkoutBtn"><i class="fas fa-lock"></i> Proceder al pago</button>
+    <a href="catalogo.html" class="btn-outline btn-full" style="margin-top:10px;text-align:center;justify-content:center">Seguir comprando</a>
+  </div>
+</aside>
+
+<div class="toast" id="toast">
+  <div class="toast-icon"><i class="fas fa-check"></i></div>
+  <div class="toast-text"><h5>Título</h5><p>Mensaje</p></div>
+</div>
+
+<script src="script.js"></script>
+<script>
+function applyPriceFilter() {
+  const min = parseFloat(document.getElementById('priceMin').value) || 0;
+  const max = parseFloat(document.getElementById('priceMax').value) || Infinity;
+  const cards = document.querySelectorAll('#catalogGrid .product-card');
+  let shown = 0;
+  cards.forEach(card => {
+    const priceEl = card.querySelector('.product-price');
+    if (!priceEl) return;
+    const priceText = priceEl.textContent.replace(/[^0-9.]/g, '');
+    const price = parseFloat(priceText.split('\n').pop());
+    card.style.display = (price >= min && price <= max) ? '' : 'none';
+    if (card.style.display !== 'none') shown++;
+  });
+  document.getElementById('resultsCount').textContent = `${shown} productos encontrados`;
+}
+
+function clearFilters() {
+  document.querySelectorAll('.filter-category').forEach(cb => cb.checked = false);
+  document.querySelectorAll('input[name="rating"]').forEach(r => r.checked = false);
+  document.getElementById('priceMin').value = '';
+  document.getElementById('priceMax').value = '';
+  document.querySelectorAll('#catalogGrid .product-card').forEach(c => c.style.display = '');
+  document.getElementById('resultsCount').textContent = `${PRODUCTS.length} productos encontrados`;
+}
+
+
+window.addEventListener('load', () => {
+  const params = new URLSearchParams(window.location.search);
+  const cat = params.get('cat');
+  const q = params.get('q');
+
+  if (cat) {
+    const cb = document.querySelector(`.filter-category[value="${cat}"]`);
+    if (cb) { cb.checked = true; cb.dispatchEvent(new Event('change')); }
+  }
+
+  if (q) {
+    const grid = document.getElementById('catalogGrid');
+    if (!grid) return;
+    const lower = q.toLowerCase();
+    const matched = PRODUCTS.filter(p =>
+      p.name.toLowerCase().includes(lower) ||
+      p.description.toLowerCase().includes(lower) ||
+      p.category.toLowerCase().includes(lower)
+    );
+    document.getElementById('resultsCount').textContent = `${matched.length} resultados para "${q}"`;
+    grid.innerHTML = matched.length
+      ? matched.map(p => createProductCard(p).replace('class="product-card"', `class="product-card" onclick="goToProduct(${p.id})"`)).join('')
+      : '<p style="text-align:center;color:var(--text-light);padding:40px;font-weight:600">No se encontraron productos</p>';
+    if (matched.length) {
+      grid.querySelectorAll('.product-add-btn, .product-wishlist').forEach(btn => {
+        btn.addEventListener('click', e => e.stopPropagation());
+      });
+    }
+  }
+});
+</script>
+</body>
+</html>
